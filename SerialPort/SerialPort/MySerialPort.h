@@ -22,7 +22,6 @@ namespace lincoln_class
 
 	protected:
 		BOOL WriteCommByte(unsigned char);	//内部实现，向串口写数据
-
 		HANDLE m_hIDComDev;
 		OVERLAPPED m_OverlappedRead, m_OverlappedWrite;
 		BOOL m_bOpened;
