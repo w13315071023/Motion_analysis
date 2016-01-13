@@ -11,6 +11,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "open SerialPort is failed !" << endl;
 	}
 	unsigned char val = 0;
+	unsigned char rec = 0;
 	while (true)
 	{
 		cin >> val;
@@ -19,13 +20,25 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (obj.IsOpened())
 		{
 			obj.SendData((char*)&val, sizeof(val));
+			while (1)
+			{
+				int test = obj.ReadData((char*)&rec, 1);
+				//cout << test<<endl;
+				if (test != 0)
+				{
+					cout << int(rec) << endl;
+					break;
+				}
+
+			}
+			
 		}
 		else
 		{
 			cout << "SerialPort is not opened !" << endl;
 		}
 
-		if (val == 726)
+		if (val == 404)
 		{
 			break;
 		}

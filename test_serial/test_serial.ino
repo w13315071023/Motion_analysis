@@ -20,9 +20,10 @@ void loop()
        if(receiveVal == '1')    
           ledState = 1;   
        else
-          ledState = 0;     
+          ledState = 0;  
+        Serial.write(8);   
     }   
-      
+     
     digitalWrite(LedPin, ledState); 
       
     delay(50);    

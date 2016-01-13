@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialPort", "SerialPort\SerialPort.vcxproj", "{79EA85DD-E29E-4466-82FB-CCD3641770B2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getPort", "getPort\getPort.vcxproj", "{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{79EA85DD-E29E-4466-82FB-CCD3641770B2}.Debug|Win32.Build.0 = Debug|Win32
 		{79EA85DD-E29E-4466-82FB-CCD3641770B2}.Release|Win32.ActiveCfg = Release|Win32
 		{79EA85DD-E29E-4466-82FB-CCD3641770B2}.Release|Win32.Build.0 = Release|Win32
+		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Debug|Win32.Build.0 = Debug|Win32
+		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Release|Win32.ActiveCfg = Release|Win32
+		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
