@@ -23,6 +23,7 @@ int sound_din = 2;
 int sound_ain = A0;
 int sound_advalue; 
 int laser_din = 12;
+
 void setup() {
      pinMode(sound_din,INPUT);
      pinMode(sound_ain,INPUT);
@@ -37,8 +38,6 @@ void loop()
       if(digitalRead(sound_din)==LOW) //detect hit
         {
             sound_advalue = analogRead(sound_ain);
-            //Serial.println("hit");
-            //Serial.println(sound_advalue);
             if(sound_advalue>100) //adjust sensitivity
              {
                  Serial.write(2);
@@ -50,7 +49,6 @@ void loop()
          } 
        else
         {
-           //Serial.println("has ball no hit");
            Serial.write(1);
          }
     }
