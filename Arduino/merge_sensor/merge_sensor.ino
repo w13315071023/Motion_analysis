@@ -38,7 +38,7 @@ void loop()
       if(digitalRead(sound_din)==LOW) //detect hit
         {
             sound_advalue = analogRead(sound_ain);
-            if(sound_advalue>100) //adjust sensitivity
+            if(sound_advalue>450) //adjust sensitivity
              {
                  Serial.write(2);
               }

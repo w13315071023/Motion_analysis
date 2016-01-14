@@ -14,38 +14,21 @@ int _tmain(int argc, _TCHAR* argv[])
 	unsigned char rec = 0;
 	while (true)
 	{
-		cin >> val;
-		cin.get();
-
 		if (obj.IsOpened())
 		{
-			obj.SendData((char*)&val, sizeof(val));
+			//obj.SendData((char*)&val, sizeof(val));
 			while (1)
 			{
 				int test = obj.ReadData((char*)&rec, 1);
-				//cout << test<<endl;
-				if (test != 0)
-				{
-					cout << int(rec) << endl;
-					break;
-				}
-
-			}
-			
+				cout << int(rec) << endl;
+			}	
 		}
 		else
 		{
 			cout << "SerialPort is not opened !" << endl;
 		}
-
-		if (val == 404)
-		{
-			break;
-		}
 	}
 	obj.Close();
-
-
 	return 0;
 }
 
