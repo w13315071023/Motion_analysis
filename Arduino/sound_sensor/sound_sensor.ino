@@ -23,7 +23,7 @@
     {
       Serial.println("detect voice");
       Serial.println(ad_value);
-      } 
+     } 
       delay(500); //ms   
    }
  
