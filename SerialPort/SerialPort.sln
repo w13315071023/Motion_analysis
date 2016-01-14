@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialPort", "SerialPort\Se
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getPort", "getPort\getPort.vcxproj", "{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "serialPortdll", "serialPortdll\serialPortdll.vcxproj", "{13B88091-4919-4F3B-91A8-99FDD2B88679}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Debug|Win32.Build.0 = Debug|Win32
 		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Release|Win32.ActiveCfg = Release|Win32
 		{BD089DA8-C58B-4B44-A185-F7BA1DEC9C35}.Release|Win32.Build.0 = Release|Win32
+		{13B88091-4919-4F3B-91A8-99FDD2B88679}.Debug|Win32.ActiveCfg = Debug|Win32
+		{13B88091-4919-4F3B-91A8-99FDD2B88679}.Debug|Win32.Build.0 = Debug|Win32
+		{13B88091-4919-4F3B-91A8-99FDD2B88679}.Release|Win32.ActiveCfg = Release|Win32
+		{13B88091-4919-4F3B-91A8-99FDD2B88679}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
