@@ -25,41 +25,36 @@ int sound_advalue;
 int laser_din = 12;
 int connect_en = 0;
 const int LedPin = 13;
-
 void setup() {
      pinMode(sound_din,INPUT);
      pinMode(sound_ain,INPUT);
      pinMode(laser_din,INPUT);
      Serial.begin(9600); //default 8N1
 }
-
 void loop() 
 {  
-    
-     if(digitalRead(laser_din)==LOW) //has ball
+  if(digitalRead(laser_din)==LOW) //has ball
     {   
       if(digitalRead(sound_din)==LOW) //detect hit
         {
             sound_advalue = analogRead(sound_ain);
             if(sound_advalue>450) //adjust sensitivity
-             {
+              {
                  Serial.write(2);
-              }
+               }
              else
-             {
+               {
                 Serial.write(3);           
-              }
+               }
          } 
        else
         {
-           digitalWrite(LedPin,1); 
            Serial.write(1);
          }
     }
   else  //no ball
     {
-     
       Serial.write(0);
-    }
+     }
  delay(500); //ms 
 }
