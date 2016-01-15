@@ -27,6 +27,12 @@
     <ClInclude Include="MySerialPort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="getport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumSerial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +42,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MySerialPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumSerial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

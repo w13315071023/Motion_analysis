@@ -1,6 +1,6 @@
 #pragma once
 #include <windows.h>
-
+//my serial port class
 namespace lincoln_class
 {
 	class CMySerialPort
@@ -27,4 +27,5 @@ namespace lincoln_class
 		BOOL m_bOpened;
 	};
 }
+
 
