@@ -23,6 +23,8 @@ int sound_din = 2;
 int sound_ain = A0;
 int sound_advalue; 
 int laser_din = 12;
+int connect_en = 0;
+const int LedPin = 13;
 
 void setup() {
      pinMode(sound_din,INPUT);
@@ -33,7 +35,8 @@ void setup() {
 
 void loop() 
 {  
-  if(digitalRead(laser_din)==LOW) //has ball
+    
+     if(digitalRead(laser_din)==LOW) //has ball
     {   
       if(digitalRead(sound_din)==LOW) //detect hit
         {
@@ -49,12 +52,14 @@ void loop()
          } 
        else
         {
+           digitalWrite(LedPin,1); 
            Serial.write(1);
          }
     }
   else  //no ball
     {
+     
       Serial.write(0);
     }
-  delay(500); //ms   
+ delay(500); //ms 
 }

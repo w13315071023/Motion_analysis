@@ -17,11 +17,13 @@ void loop()
     {        
         receiveVal = Serial.read();
         
-       if(receiveVal == '1')    
-          ledState = 1;   
+       if(receiveVal == 66)  
+       {
+        Serial.write(88); 
+        ledState = 1; 
+        }  
        else
           ledState = 0;  
-        Serial.write(8);   
     }   
      
     digitalWrite(LedPin, ledState); 
