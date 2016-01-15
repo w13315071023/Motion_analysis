@@ -27,3 +27,4 @@ namespace lincoln_class
 		BOOL m_bOpened;
 	};
 }
+

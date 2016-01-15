@@ -4,34 +4,10 @@
 using namespace std;
 using namespace lincoln_class;
 
-int get_Port_num(CMySerialPort obj)
+ int get_port_num()
 {
-	for (int port_num = 1; port_num <= 200; port_num++)
-	{
-		if (false == obj.Open(port_num, 9600))
-		{
-			//cout << "open SerialPort is failed_1 !" << endl;
-		}
-		else
-		{
-		  unsigned char hook = 66;
-		  unsigned char ack = 0;
-		  obj.SendData((char*)&hook, sizeof(hook));
-		  Sleep(5000);
-		  int recv_flag = obj.ReadData((char*)&ack, 1);
-		  if (recv_flag != 0)
-		  {
-			  if (int(ack) == 88)
-			  {
-				  obj.Close();
-				  return port_num;
-			  }				  
-		  }
-		  obj.Close();
-		  if (port_num == 200)
-			  return 0;
-		}
-	}
+	int num = 12;
+	return num;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -39,8 +15,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	CMySerialPort obj;
 	unsigned char msg=4;
 	unsigned char prev_msg = 4;
-	//add getport function
-	obj.Open(12, 9600);
+	obj.Open(get_port_num(), 9600);
 	while (1)
 	{
 		int recv_flag = obj.ReadData((char*)&msg, 1); //the num of read byte
@@ -60,7 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 					cout << tran_msg << " :has ball hit invalid!" << endl;
 				else
 					cout << "error!" << endl;
-			}	
+			}
 		}
 	}
 	return 0;

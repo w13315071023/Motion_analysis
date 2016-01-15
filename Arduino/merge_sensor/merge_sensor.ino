@@ -33,6 +33,7 @@ void setup() {
 }
 void loop() 
 {  
+ // Serial.write(9);  //connect PC hook
   if(digitalRead(laser_din)==LOW) //has ball
     {   
       if(digitalRead(sound_din)==LOW) //detect hit
