@@ -4,10 +4,10 @@
  * detect hit ball motion
  * send a signal num to PC by uart 9600 8N1
  * send to PC signal num explanation:
- * 0: no ball no hit
- * 1: has ball no hit
- * 2: has ball hit valid
- * 3; has ball hit invalid
+ * 1: no ball no hit
+ * 2: has ball no hit
+ * 3: has ball hit valid
+ * 4; has ball hit invalid
  * sound sensor pinMap:
  * PIN MAP
  * DOUT  D2
@@ -41,21 +41,21 @@ void loop()
             sound_advalue = analogRead(sound_ain);
             if(sound_advalue>450) //adjust sensitivity
               {
-                 Serial.write(2);
+                 Serial.write(3);
                }
              else
                {
-                Serial.write(3);           
+                Serial.write(4);           
                }
          } 
        else
         {
-           Serial.write(1);
+           Serial.write(2);
          }
     }
   else  //no ball
     {
-      Serial.write(0);
+      Serial.write(1);
      }
  delay(500); //ms 
 }

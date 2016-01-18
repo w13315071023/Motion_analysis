@@ -1,26 +1,24 @@
-#include "stdafx.h"
-#include "MySerialPort.h"
-#include "getport.h"
+// sensor_demo.cpp : Defines the entry point for the console application.
+//
+#include <stdio.h>
+#include <tchar.h>
 #include <iostream>
+#include "serialPortdll.h"
 using namespace std;
-using namespace lincoln_class;
-
 int _tmain(int argc, _TCHAR* argv[])
 {
-	CMySerialPort obj;
-	unsigned int msg=0;
-	unsigned int prev_msg = 0;
-	int com_num = get_port_num();
-	cout << com_num << endl;
+	static unsigned int msg = 0;
+	static unsigned int prev_msg = 0;
+	int com_num = get_com_num();
 	if (com_num == 0)
-		cout << "no valid usb serial port!" << endl;
+		std::cout << "no valid com port!" << std::endl;
 	else
 	{
-		obj.Open(com_num, 9600);
+		open_com_port(com_num);
 		while (1)
 		{
-			int recv_flag = obj.ReadData((unsigned int*)&msg, 4); //the num of read byte
-			if (recv_flag != 0)
+			msg = fetch_msg();
+			if (msg>=1&&msg<=4)
 			{
 				if (msg != prev_msg)
 				{
@@ -34,10 +32,9 @@ int _tmain(int argc, _TCHAR* argv[])
 						cout << tran_msg << " :has ball hit valid!" << endl;
 					else if (tran_msg == 4)
 						cout << tran_msg << " :has ball hit invalid!" << endl;
-					else
-						cout << "error!" << endl;
 				}
 			}
+
 		}
 	}
 	return 0;
