@@ -18,21 +18,19 @@ int _tmain(int argc, _TCHAR* argv[])
 		while (1)
 		{
 			msg = fetch_msg();
-			if (msg>=1&&msg<=4)
+
+			if (msg != prev_msg)
 			{
-				if (msg != prev_msg)
-				{
-					prev_msg = msg;
-					unsigned int tran_msg = msg;
-					if (tran_msg == 1)
-						cout << tran_msg << " :no ball!" << endl;
-					else if (tran_msg == 2)
-						cout << tran_msg << " :has ball no hit!" << endl;
-					else if (tran_msg == 3)
-						cout << tran_msg << " :has ball hit valid!" << endl;
-					else if (tran_msg == 4)
-						cout << tran_msg << " :has ball hit invalid!" << endl;
-				}
+				prev_msg = msg;
+				unsigned int tran_msg = msg;
+				if (tran_msg == 1)
+					cout << tran_msg << " :no ball!" << endl;
+				else if (tran_msg == 2)
+					cout << tran_msg << " :has ball no hit!" << endl;
+				else if (tran_msg == 3)
+					cout << tran_msg << " :has ball hit valid!" << endl;
+				else if (tran_msg == 4)
+					cout << tran_msg << " :has ball hit invalid!" << endl;
 			}
 
 		}

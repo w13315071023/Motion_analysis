@@ -23,14 +23,16 @@ bool open_com_port(int com_num)
 	else
 		return FALSE;
 }
-
+static unsigned int prev_msg = 0;
 unsigned int fetch_msg()
 {	
-	static unsigned int msg = 0;
+	static unsigned int msg = 0;	
 	int recv_flag = obj.ReadData((unsigned int*)&msg, 4); //the num of read byte
-	if (recv_flag != 0)   //1:no ball; 2:has ball no hit; 3:has ball hit valid; 4:has ball hit invalid;
+	if (recv_flag != 0&&msg >= 1 && msg <= 4)   //1:no ball; 2:has ball no hit; 3:has ball hit valid; 4:has ball hit invalid;
 	{
-		return msg;		
-	}
+		prev_msg = msg;
+		return msg;
+	}	
+	return prev_msg;
 }
 
