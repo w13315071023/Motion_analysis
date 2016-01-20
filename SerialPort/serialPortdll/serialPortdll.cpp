@@ -23,6 +23,14 @@ bool open_com_port(int com_num)
 	else
 		return FALSE;
 }
+bool close_com_port(int com_num)
+{
+	bool flag = obj.Close();
+	if (flag)
+		return TRUE;
+	else
+		return FALSE;
+}
 static unsigned int prev_msg = 0;
 unsigned int fetch_msg()
 {	
